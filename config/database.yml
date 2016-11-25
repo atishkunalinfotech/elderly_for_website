@@ -11,9 +11,9 @@ development:
   username: root
   password: atish123
 
-  production:
-  adapter: mysql2
+production:
+  adapter: postgresql
   database: test_elderly1
   host: localhost
-  username: root
-  password: atish123
+  username: postgres
+  password: root
