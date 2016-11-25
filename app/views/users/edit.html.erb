@@ -1,0 +1,19 @@
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+     <p>
+     	<%= link_to "View Profile", user_path(current_user.id)%>
+ </p> 	
+<%= javascript_include_tag "jquery-1.7.0.min"%>
+
+<h1>Update Profile</h1>
+
+<%= render 'form'%>
+
+<%#= link_to 'Show', @elder_video %> |
+<%#= link_to 'Back', elder_videos_path %>
+</div>
+    </div>
+  </div>
+</div>

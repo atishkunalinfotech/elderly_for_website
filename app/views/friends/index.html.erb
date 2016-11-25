@@ -1,0 +1,66 @@
+
+<%#raise @user_pending.inspect%>
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+       <p>
+          
+       </p>
+       <h4>Find Friend</h4>
+        <%= form_tag :find_friend, :url => find_friend_path, :method => 'get' do%> 
+            <td width="20%">
+              <%= text_field_tag :fullname,"",:placeholder => "Enter Fullname" %>
+            </td>
+            <%= submit_tag "Submit",name: "findfriend",value: "Find",:class=>"search-btn"%>
+        <%end%>
+
+        <h1>Friends</h1>
+
+  <table width="100%" border="0" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%= "Name" %></th>
+      </tr>
+    </thead>
+    <%if @user_friends.present?%>
+    <tbody>
+      <% @user_friends.each do |user|%>
+        <tr>
+          <td><%= user.fullname rescue nil %></td>
+          <td><%= link_to "View Profile", user_path(user.id)%></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <%end%>
+  </table>
+  <br />
+  <h1>Friend Requests</h1>
+  <table width="100%" border="0" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%= "Name" %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <%if @user.present?%>
+    <tbody>
+      <% @user.each do |user|%>
+        <tr>
+          <td><%= user.fullname rescue nil %></td>
+          <td><%= link_to "View Profile", user_path(user.id)%></td>
+          <td><%= link_to 'Accept Request', accept_user_path(:friend_id => user) %></td>
+          <td><%= link_to 'Reject Request', reject_user_path(:friend_id =>user) %></td>
+          <td><%= link_to 'Remove Request', remove_user_path(:friend_id =>user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <%end%>
+  </table>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

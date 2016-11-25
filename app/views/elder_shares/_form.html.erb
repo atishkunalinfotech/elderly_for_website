@@ -1,0 +1,32 @@
+<%= form_for(elder_share) do |f| %>
+  <% if elder_share.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(elder_share.errors.count, "error") %> prohibited this elder_share from being saved:</h2>
+
+      <ul>
+      <% elder_share.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sender_id %>
+    <%= f.number_field :sender_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :receiver_id %>
+    <%= f.number_field :receiver_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :elder_gallary_id %>
+    <%= f.number_field :elder_gallary_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

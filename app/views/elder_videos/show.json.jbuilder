@@ -1,0 +1,1 @@
+json.partial! "elder_videos/elder_video", elder_video: @elder_video

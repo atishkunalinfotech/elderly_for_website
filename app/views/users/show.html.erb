@@ -1,0 +1,52 @@
+  <div class="faq">
+<div class="container">
+<div class="row" style="margin-top:150px;">
+<div class="span12">
+ <p>
+   <%#= link_to_function "Back", "history.back()",:class=> "back-btn" %>
+ </p>
+ <h3>PROFILE</h3>
+          <div>
+
+              <strong>Name:</strong>
+          <%= @user.fullname rescue nil %>
+          </div>
+          
+          <div>
+
+               <strong>Profile Pic:</strong>
+           <%= image_tag @user.photo.url(:medium) rescue nil %>
+          </div>
+           
+          <div>
+             <strong>Gender:</strong>
+          <%= @user.gender rescue nil %>
+          </div>
+          
+          <div>
+             <strong>Age:</strong>
+          <%= @user.age rescue nil %>
+
+          </div>
+          
+          <div>
+             <strong>Country:</strong>
+          <%= ISO3166::Country[@user.country] rescue nil %>
+
+          </div>
+          
+        
+      
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @elder_share.sender_id %>
+</p>
+
+<p>
+  <strong>Receiver:</strong>
+  <%= @elder_share.receiver_id %>
+</p>
+
+<p>
+  <strong>Elder gallary:</strong>
+  <%= @elder_share.elder_gallary_id %>
+</p>
+
+<%= link_to 'Edit', edit_elder_share_path(@elder_share) %> |
+<%= link_to 'Back', elder_shares_path %>

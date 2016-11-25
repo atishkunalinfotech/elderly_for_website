@@ -1,0 +1,1 @@
+json.array! @elder_videos, partial: 'elder_videos/elder_video', as: :elder_video

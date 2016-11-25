@@ -1,0 +1,34 @@
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+       <p>
+          <%= link_to 'Add Photo', new_elder_gallary_path %>
+       </p>
+        <h1>Photo Gallary</h1>
+
+        <table width="100%" border="0" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><%= "Photo Name" %></th>
+              <th><%= "Photo" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @elder_gallaries.each do |elder_gallary| %>
+              <tr>
+                <td><%= elder_gallary.name %></td>
+                <td><%= image_tag(elder_gallary.photo.url(:thumb)) %></td>
+                <!-- <td><%= link_to 'Show', elder_gallary %></td> -->
+                <td><%= link_to 'Edit', edit_elder_gallary_path(elder_gallary) %></td>
+                <td><%= link_to 'Destroy', elder_gallary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'share',update_share_path(:elder_photo => elder_gallary),method: 'post' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

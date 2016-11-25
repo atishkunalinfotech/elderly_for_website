@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Elder Shares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sender</th>
+      <th>Receiver</th>
+      <th>Elder gallary</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elder_shares.each do |elder_share| %>
+      <tr>
+        <td><%= elder_share.sender_id %></td>
+        <td><%= elder_share.receiver_id %></td>
+        <td><%= elder_share.elder_gallary_id %></td>
+        <td><%= link_to 'Show', elder_share %></td>
+        <td><%= link_to 'Edit', edit_elder_share_path(elder_share) %></td>
+        <td><%= link_to 'Destroy', elder_share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Elder Share', new_elder_share_path %>

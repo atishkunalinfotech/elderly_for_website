@@ -1,0 +1,160 @@
+<!-- <h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> -->
+
+<style>
+.error{
+    display: block;
+    color: white;
+}
+</style>
+<% content_for :styles do %>
+ <%= stylesheet_link_tag "sign-up"%>
+<% end %>
+
+
+<!-- Sign In Option 1 -->
+<div id="sign_up1">
+    <div class="container">
+        <div class="row">
+            <div class="span12 header">
+                <h4>Create your account</h4>
+                
+
+                <!-- <div class="span4 social">
+                    <a href="/auth/facebook" class="circle facebook">
+                        <img src="/assets/face.png" alt="">
+                    </a>
+                     <a href="/auth/twitter" class="circle twitter">
+                        <img src="/assets/twt.png" alt="">
+                    </a>
+                     <a href="/auth/google_oauth2" class="circle gplus">
+                        <img src="/assets/gplus.png" alt="">
+                    </a>
+                </div> -->
+            </div>
+
+            <!-- <div class="span3 division">
+                <div class="line l"></div>
+                <span>or</span>
+                <div class="line r"></div>
+            </div>
+ -->
+            <div class="span12 footer">
+                <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
+                    <div style="float:left;width:auto"><%= f.text_field :email, :placeholder=>"Email" ,:style => "width:250px" %></div>
+                     
+                    <div style="float:left;width:auto"><%= f.password_field :password, :placeholder=>"Password" ,:style => "width:250px" %>
+                    </div>
+                    <div style="float:left;width:auto"><%= f.password_field :password_confirmation, :placeholder=>"Confirm Password" ,:style => "width:250px"%></div>
+                    <div style="float:left;width:auto"><%= f.submit "Sign Up" ,:style => "width:auto"%></div>
+                   
+                <% end %>
+            </div>
+
+            <div class="span12 dosnt">
+                <span>Already have an account?</span>
+                <%= link_to "Sign in", new_user_session_path %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sign In Option 2 -->
+<div id="sign_up2">
+    <div class="container">
+        <div class="section_header">
+            <h3>Sign up <span>(option 2)</span></h3>
+        </div>
+        <div class="row login">
+            <div class="span5 left_box">
+                <h4>Create your account</h4>
+
+                <div class="perk_box">
+                    <div class="perk">
+                        <span class="icos ico1"></span>
+                        <p><strong>Lorem alteration</strong> in some form  injected humour these randomised words .</p>
+                    </div>
+                    <div class="perk">
+                        <span class="icos ico2"></span>
+                        <p><strong>There are many variations</strong> of passages of Lorem alteration in some form  injected humour these randomised words.</p>
+                    </div>
+                    <div class="perk">
+                        <span class="icos ico3"></span>
+                        <p><strong>Alteration in some form</strong> injected humour these randomised words.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span6 signin_box">
+                <div class="box">
+                    <div class="box_cont">
+                        <!-- <div class="social">
+                            <a href="/auth/facebook" class="circle facebook">
+                                <img src="/assets/face.png" alt="">
+                            </a>
+                             <a href="/auth/twitter" class="circle twitter">
+                                <img src="/assets/twt.png" alt="">
+                            </a>
+                             <a href="/auth/google_oauth2" class="circle gplus">
+                                <img src="/assets/gplus.png" alt="">
+                            </a>
+                        </div> -->
+
+                        <!-- <div class="division">
+                            <div class="line l"></div>
+                            <div class="line r"></div>
+                            <div class="line r"></div>
+                        </div> -->
+
+                        <div class="form">
+                            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                                <%= devise_error_messages! %>
+                                <%= f.text_field :email, :placeholder=>"Email" %>
+                                 <% if @minimum_password_length %>
+                                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                  <% end %><br />
+                                <%= f.password_field :password, :placeholder=>"Password" %>
+                                <%= f.password_field :password_confirmation, :placeholder=>"Confirm Password" %>
+                                <div class="forgot">
+                                    <span>Already have an account?</span>
+                                    <%= link_to "Sign in", new_user_session_path %>
+                                </div>
+                                <%= f.submit "Sign Up" %>
+                            <% end %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

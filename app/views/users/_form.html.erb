@@ -1,0 +1,58 @@
+<%= form_for(@user,:html =>{ :multipart => true}) do |f| %>
+
+                        <div class="login-head"></div>
+                            <% flash.each do |key, value| %>
+                            <div id="error_explanation">
+                              <ul>
+                                <li><%= value %></li>
+                                </ul>
+                              </div>
+                            <% end%>
+
+                        <% if @user.errors.any? %>
+                        <div id="error_explanation">
+                          <ul>
+                          <% @user.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                          <% end %>
+                          
+                          </ul>
+                        </div>
+                      <% end %>
+                        <div class="label1"><%= f.label "Username"%></div>
+                        <%= f.text_field :username, autofocus: true ,:autocomplete=>"off",:class=>"gpf-in" %>
+                        <div class="label1"><%= f.label "Photo"%></div>
+                        <%= f.file_field :photo, autofocus: true ,:autocomplete=>"off",:class=>"gpf-in" %>
+                        <%= image_tag @user.photo.url(:thumb) rescue nil%>
+                        
+                        <div class="label1"><%= f.label "Full Name"%></div>
+                        <%= f.text_field :fullname, autofocus: true ,:autocomplete=>"off",:class=>"gpf-in gpf-msg" %>
+
+                        <div class="label1"><%= f.label "Country"%></div>
+                        <%#= f.text_field :country, autofocus: true ,:autocomplete=>"off",:class=>"gpf-in gpf-mob" %>
+                        <%= f.country_select(:country) %>
+
+                        <div class="label1"><%= f.label "Age"%></div>
+                        <%= f.text_field :age, autofocus: true ,:autocomplete=>"off",:class=>"gpf-in gpf-mob" %>
+
+                        <div class="label1"><%= f.label "Gender"%></div>
+                        
+                        <%= f.select :gender, [["Female", "Female"],["Male", "Male"]],{:prompt => "Select Gender"} %>
+
+                        
+                        <div>
+                            <%= f.submit "Submit",:class=>"gpf-login-btn"%>
+                        </div>
+                    <% end %>
+
+<script type="text/javascript">
+  $.noConflict();
+  function check(input) {
+    if (input.value != document.getElementById('password1').value) {
+      input.setCustomValidity('Password should match confirm password.');
+    } else {
+    input.setCustomValidity('');
+   }
+  }
+</script>
+         

@@ -1,0 +1,37 @@
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+       <p>
+          <%= link_to 'Back', elder_gallaries_path %>
+       </p>
+        <%= form_for(@elder_gallary) do |f| %>
+          <% if @elder_gallary.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@elder_gallary.errors.count, "error") %> prohibited this elder_gallary from being saved:</h2>
+
+              <ul>
+              <% @elder_gallary.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <%= f.hidden_field :user_id, :value => current_user.id%>
+          <div class="field">
+            <%= f.label 'Photo' %>
+            <%= f.file_field :photo %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

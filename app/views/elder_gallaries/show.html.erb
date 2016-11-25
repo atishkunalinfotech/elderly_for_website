@@ -1,0 +1,21 @@
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+      	<p>
+<%= link_to 'Edit', edit_elder_gallary_path(@elder_gallary) %> |
+<%= link_to 'Back', elder_gallaries_path %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @elder_gallary.name %>
+</p>
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @elder_gallary.photo.url(:medium) %>
+</p>
+
+</div>
+    </div>
+  </div>
+</div>
+

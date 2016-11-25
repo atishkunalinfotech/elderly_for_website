@@ -1,0 +1,1 @@
+json.array! @elder_shares, partial: 'elder_shares/elder_share', as: :elder_share

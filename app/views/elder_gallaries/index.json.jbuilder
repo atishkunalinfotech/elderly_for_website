@@ -1,0 +1,1 @@
+json.array! @elder_gallaries, partial: 'elder_gallaries/elder_gallary', as: :elder_gallary

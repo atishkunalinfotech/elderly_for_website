@@ -1,0 +1,21 @@
+<div class="faq">
+  <div class="container">
+    <div class="row" style="margin-top:150px;">
+      <div class="span12">
+      	<p>
+           <%= link_to 'Edit', edit_elder_video_path(@elder_video) %> |
+           <%= link_to 'Back', elder_videos_path %>
+      	</p>
+      	<div>
+		  <strong>Name:</strong>
+		  <%= @elder_video.name %>
+		</div>
+		<div>
+		  <strong>Video:</strong><br/>
+		  <%#= video_tag @elder_gallary.video %>
+		  <%= video_tag @elder_video.video.url(:medium), controls: true, style: "max-width: 100%;" %>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
