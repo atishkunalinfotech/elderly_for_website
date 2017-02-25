@@ -60,8 +60,8 @@ config.action_mailer.smtp_settings = {
 :port => 587,
 :domain => "imap.sendgrid.com",
 :authentication => :plain,
-:user_name => "atish123",
-:password => "qwerty12345678"
+:user_name => "",
+:password => ""
 }
 
 
